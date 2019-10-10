@@ -1,0 +1,13 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "server=HOSTNAME;port=3306;database=DB;uid=USER;password=PASS"
+  },
+  "AuthToken": "test-token"
+}
