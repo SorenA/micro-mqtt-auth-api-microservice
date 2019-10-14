@@ -1,7 +1,7 @@
 /*!40000 ALTER TABLE `mqtt_users` DISABLE KEYS */;
 INSERT INTO `mqtt_users` (`Id`, `Username`, `Password`) VALUES
-	(1, 'admin', '123'),
-	(2, 'user', '456');
+	(1, 'admin', '$2y$12$UclqSARIcHofSjJJWTYncOegzQILwxDPNP6E7bhmONVsmpug8BDGu'), /* Pass: 123*/
+	(2, 'user', '$2y$12$sEMIs3muc4IRY.fHPFCSSOPAtXq.qrffrtmxeX7pdenxNWclXsWeG'); /* Pass: 456 */
 /*!40000 ALTER TABLE `mqtt_users` ENABLE KEYS */;
 
 /*!40000 ALTER TABLE `mqtt_user_acl` DISABLE KEYS */;

@@ -23,7 +23,6 @@ namespace MicroMQTT.Microservice.AuthAPI.Controllers
 
             authToken = config.GetValue<string>("AuthToken");
             isAuthTokenEnabled = !string.IsNullOrEmpty(authToken);
-
         }
 
         [HttpPost]
@@ -47,7 +46,7 @@ namespace MicroMQTT.Microservice.AuthAPI.Controllers
             }
 
             // Check for password match
-            if (user.Password != model.Password)
+            if (!BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
             {
                 return new AuthResponseModel(false);
             }

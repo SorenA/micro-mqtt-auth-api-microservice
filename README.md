@@ -2,8 +2,6 @@
 
 Microservice-based authentication API using MySQL as data-layer with ACL support for micro-mqtt-broker.
 
-WARNING: Not production ready, encrypted passwords are not supported yet in the data store.
-
 ## Docker & Kubernetes
 
 The broker was built with Kubernetes in mind, under the directory `/k8s` are sample deployment configurations.
@@ -33,6 +31,12 @@ If no AuthToken is present, it will not be required from the micro-mqtt-broker r
 
 The folder `/sql` contains scripts for creating the tables with minimum needed fields, and a seed script for example data.
 
+The passwords for the example users can be read in the seed script comments.
+
 ## Development
 
 Copy `appsettings.Development.json.example` to  `appsettings.Development.json` and configure it to your local environment.
+
+### Built with NuGet packages
+
+- [BCrypt.Net-Core](https://github.com/neoKushan/BCrypt.Net-Core)
