@@ -12,7 +12,7 @@ Prebuilt images can be found at on Docker Hub at [sorena/micro-mqtt-auth-api-mic
 
 [Micro MQTT Broker](https://github.com/SorenA/micro-mqtt-broker) - Implementation of a micro MQTT broker based on Mosca MQTT with multiple authentication providers, TLS and ACL support.
 
-[Micro MQTT Handshake API Microservice](https://github.com/SorenA/micro-mqtt-handshake-api-microservice) - Implementation of an API microservice that can be used to register and handshake new devices on-demand. Compatible with same database as this microservice.
+[Micro MQTT Handshake API Microservice](https://github.com/SorenA/micro-mqtt-handshake-api-microservice) - Implementation of an API microservice that can be used to register and handshake new devices on-demand. Compatible with same database as this microservice, althrough requires extra fields, see repo for scripts.
 
 ## Configuration
 
@@ -40,3 +40,4 @@ Copy `appsettings.Development.json.example` to  `appsettings.Development.json` a
 ### Built with NuGet packages
 
 - [BCrypt.Net-Core](https://github.com/neoKushan/BCrypt.Net-Core)
+- [Pomelo.EntityFrameworkCore.MySql](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql)
