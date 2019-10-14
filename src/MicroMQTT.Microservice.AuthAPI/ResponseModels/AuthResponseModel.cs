@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MicroMQTT.Microservice.AuthAPI
+namespace MicroMQTT.Microservice.AuthAPI.ResponseModels
 {
     public class AuthResponseModel
     {

@@ -1,4 +1,4 @@
-namespace MicroMQTT.Microservice.AuthAPI
+namespace MicroMQTT.Microservice.AuthAPI.RequestModels
 {
     public class AuthRequestModel
     {

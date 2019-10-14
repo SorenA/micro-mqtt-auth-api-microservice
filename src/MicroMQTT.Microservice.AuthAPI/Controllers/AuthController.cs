@@ -1,4 +1,6 @@
 ﻿using MicroMQTT.Microservice.AuthAPI.Models;
+using MicroMQTT.Microservice.AuthAPI.RequestModels;
+using MicroMQTT.Microservice.AuthAPI.ResponseModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
