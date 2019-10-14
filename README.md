@@ -25,6 +25,10 @@ AuthToken=test-token
 
 If no AuthToken is present, it will not be required from the micro-mqtt-broker requests, allowing open access.
 
+## Database
+
+The folder `/sql` contains scripts for creating the tables with minimum needed fields, and a seed script for example data.
+
 ## Development
 
 Copy `appsettings.Development.json.example` to  `appsettings.Development.json` and configure it to your local environment.
