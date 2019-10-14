@@ -2,9 +2,13 @@
 
 Microservice-based authentication API using MySQL as data-layer with ACL support for micro-mqtt-broker.
 
+WARNING: Not production ready, encrypted passwords are not supported yet in the data store.
+
 ## Docker & Kubernetes
 
 The broker was built with Kubernetes in mind, under the directory `/k8s` are sample deployment configurations.
+
+Prebuilt images can be found at on Docker Hub at [sorena/micro-mqtt-auth-api-microservice](https://hub.docker.com/r/sorena/micro-mqtt-auth-api-microservice).
 
 ## Related projects
 

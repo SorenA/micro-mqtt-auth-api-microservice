@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-auth-api
+spec:
+  ports:
+  - name: http
+    port: 80
+  selector:
+    app: microservice-auth-api
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-auth-api
+spec:
+  selector:
+    matchLabels:
+      app: microservice-auth-api
+  template:
+    metadata:
+      labels:
+        app: microservice-auth-api
+    spec:
+      containers:
+      - image: sorena/micro-mqtt-auth-api-microservice:0.1.0
+        name: microservice-auth-api
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: ConnectionStrings__DefaultConnection
+          value: "server=mysql-host;port=3306;database=micro_mqtt;uid=micro_mqtt_user;password=foo"
+        - name: AuthToken
+          value: "foo"
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: microservice-auth-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: msa-api.cluster.lightops.dk
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: microservice-auth-api
+          servicePort: http
