@@ -25,7 +25,7 @@ spec:
         app: microservice-auth-api
     spec:
       containers:
-      - image: sorena/micro-mqtt-auth-api-microservice:0.1.0
+      - image: sorena/micro-mqtt-auth-api-microservice:1.0.0
         name: microservice-auth-api
         env:
         - name: ASPNETCORE_ENVIRONMENT
