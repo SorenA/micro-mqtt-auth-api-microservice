@@ -43,10 +43,10 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: msa-api.cluster.lightops.dk
+  - host: svc.example.com
     http:
       paths:
-      - path: /
+      - path: /api/auth
         backend:
           serviceName: microservice-auth-api
           servicePort: http
