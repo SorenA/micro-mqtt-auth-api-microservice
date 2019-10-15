@@ -15,23 +15,23 @@ namespace MicroMQTT.Microservice.AuthAPI.Controllers
         private readonly ILogger<AuthController> logger;
         private readonly AppDbContext dbContext;
 
-        private bool isAuthTokenEnabled { get; set; }
-        private string authToken { get; set; }
+        private bool IsAuthTokenEnabled { get; set; }
+        private string AuthToken { get; set; }
 
         public AuthController(ILogger<AuthController> logger, AppDbContext dbContext, IConfiguration config)
         {
             this.logger = logger;
             this.dbContext = dbContext;
 
-            authToken = config.GetValue<string>("AuthToken");
-            isAuthTokenEnabled = !string.IsNullOrEmpty(authToken);
+            AuthToken = config.GetValue<string>("AuthToken");
+            IsAuthTokenEnabled = !string.IsNullOrEmpty(AuthToken);
         }
 
         [HttpPost]
         public AuthResponseModel Post(AuthRequestModel model)
         {
             // Check if we should match auth token
-            if (isAuthTokenEnabled && authToken != model.AuthToken)
+            if (IsAuthTokenEnabled && AuthToken != model.AuthToken)
             {
                 return new AuthResponseModel(false);
             }
